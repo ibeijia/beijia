@@ -15,7 +15,11 @@
           if(/MicroMessenger/i.test(navigator.userAgent)){
                 return false;
             }else{
+               try{
                window.location.href = 'taobao://better.tmall.hk';
+               }catch(e){
+                  alert(e.name);
+               }
                  window.setTimeout(function () {
                         window.location.href = 'http://better.m.tmall.com' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了
                 }, 500);
