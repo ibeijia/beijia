@@ -47,7 +47,7 @@
 	function try_to_open_app() {
 		var b=browser();
 			var iframe=document.createElement('iframe');
-			iframe.src='taobao:open';
+			iframe.setAttribute('src','taobao:open');
 			document.body.appendChild(iframe);
 			//window.location="taobao:open";
 		timeout = setTimeout('open_appstore()', 30);
