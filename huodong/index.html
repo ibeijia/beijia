@@ -12,8 +12,10 @@
 </style>
 <script type="text/javascript">
    function openApp() {
-          if(!(/MicroMessenger/i.test(navigator.userAgent))){
-                  window.location.href = 'taobao://better.tmall.hk';
+          if(/MicroMessenger/i.test(navigator.userAgent)){
+                return false;
+            }else{
+               window.location.href = 'taobao://better.tmall.hk';
                  window.setTimeout(function () {
                         window.location.href += '&refresh=1' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了
                 }, 500);
