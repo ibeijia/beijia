@@ -49,7 +49,7 @@
 		if(b.ios||b.iPhone||b.iPad){
 			var iframe=document.createElement('iframe');
 			iframe.src='taobao:open';
-			document.appendChild(iframe);
+			document.body.appendChild(iframe);
 			//window.location="taobao:open";
 		}else if(b.android){
 			// 
