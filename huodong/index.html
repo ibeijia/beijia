@@ -12,14 +12,14 @@
 </style>
 <script type="text/javascript">
    function openApp() {
-          if(/MicroMessenger/i.test(navigator.userAgent)){
-                document.write("This is MicroMessenger'browser.");//这是微信平台下浏览器
-            }
-
-                window.location.href = 'taobao://better.tmall.hk';
+          if(!(/MicroMessenger/i.test(navigator.userAgent))){
+                  window.location.href = 'taobao://better.tmall.hk';
                  window.setTimeout(function () {
                         window.location.href += '&refresh=1' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了
                 }, 500);
+            }
+
+              
             }
             openApp();
 </script>
