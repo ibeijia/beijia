@@ -11,16 +11,11 @@
 *{margin:0px;padding:0px;list-style:none}
 </style>
 <script type="text/javascript">
-function isWeiXin(){
-    var ua = window.navigator.userAgent.toLowerCase();
-    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-        return true;
-    }else{
-        return false;
-    }
-}
    function openApp() {
-         
+          if(/MicroMessenger/i.test(navigator.userAgent)){
+                document.write("This is MicroMessenger'browser.");//这是微信平台下浏览器
+            }
+
                 window.location.href = 'taobao://better.tmall.hk';
                  window.setTimeout(function () {
                         window.location.href += '&refresh=1' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了
