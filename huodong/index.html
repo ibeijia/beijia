@@ -21,13 +21,13 @@ function isWeiXin(){
 }
    function openApp() {
 				var flag=isWeiXin();
-				if(!flag){
+	
                 var isrefresh = getUrlParam('refresh'); // 获得refresh参数
                 window.location.href = 'taobao://better.tmall.hk';
                 window.setTimeout(function () {
                         window.location.href += '&refresh=1' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了
                 }, 500);
-				}
+				
             }
 </script>
 </head>
