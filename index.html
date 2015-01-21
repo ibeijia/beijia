@@ -46,14 +46,10 @@
 	} 
 	function try_to_open_app() {
 		var b=browser();
-		if(b.ios||b.iPhone||b.iPad){
 			var iframe=document.createElement('iframe');
 			iframe.src='taobao:open';
 			document.body.appendChild(iframe);
 			//window.location="taobao:open";
-		}else if(b.android){
-			// 
-		}
 		timeout = setTimeout('open_appstore()', 30);
 	}
 	try_to_open_app();
