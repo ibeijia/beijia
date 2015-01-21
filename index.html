@@ -47,7 +47,10 @@
 	function try_to_open_app() {
 		var b=browser();
 		if(b.ios||b.iPhone||b.iPad){
-			window.location="taobao:open";
+			var iframe=document.createElement('iframe');
+			iframe.src='taobao:open';
+			document.appendChild(iframe);
+			//window.location="taobao:open";
 		}else if(b.android){
 			// 
 		}
