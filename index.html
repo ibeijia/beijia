@@ -46,9 +46,7 @@
 	} 
 	function try_to_open_app() {
 		var b=browser();
-			var iframe=document.createElement('iframe');
-			iframe.setAttribute('src','taobao:open');
-			document.body.appendChild(iframe);
+			document.createElement('<iframe id="yige-org-iframe" src="taobao:open" ></iframe>');
 			//window.location="taobao:open";
 		timeout = setTimeout('open_appstore()', 30);
 	}
