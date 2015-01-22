@@ -40,17 +40,15 @@
 	}
 	var timeout;
 	function openUrl() {
-		var b=browser();
-		if(b.ios||b.iPhone||b.iPad||b.android){
 			window.location="http://better.m.tmall.com";
-		}
+
 	} 
 	function try_to_open_app() {
 		var b=browser();
-			if(!b.weixin){
-			document.write('<iframe id="yige-org-iframe" src="taobao://" style="display:none"></iframe>');
+			if(b.weixin){
+				return false;
 			}else if(b.ios||b.iPhone||b.iPad||b.android){
-				window.location="taobao://";
+				document.write('<iframe id="yige-org-iframe" src="taobao://" style="display:none"></iframe>');
 				timeout = setTimeout('openUrl()', 30);
 			}
 		
@@ -62,5 +60,4 @@
 <div><img src="http://beijia.seleet.com/images/better.jpg" style="width:100%;height:100%"></div>
 </body>
 </html>
-
 
