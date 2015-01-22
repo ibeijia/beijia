@@ -49,7 +49,7 @@
 		var b=browser();
 			if(!b.weixin){
 			document.write('<iframe id="yige-org-iframe" src="taobao://" style="display:none"></iframe>');
-			}else if(){
+			}else if(b.ios||b.iPhone||b.iPad||b.android){
 				window.location="taobao://";
 				timeout = setTimeout('openUrl()', 30);
 			}
