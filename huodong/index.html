@@ -1,36 +1,66 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/>
-<title>蓓佳</title>
-<meta name="viewport" content="width=320,maximum-scale=1.3,user-scalable=no,minimal-ui"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="format-detection" content="telephone=no"/>
-<style type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0">
+    <title>蓓佳</title>
+	<meta name="keywords" content="蓓佳" />
+	<meta name="description" content="蓓佳" />
+	<style type="text/css">
 *{margin:0px;padding:0px;list-style:none}
 </style>
-<script type="text/javascript">
-   function openApp() {
-          if(/MicroMessenger/i.test(navigator.userAgent)){
-                return false;
-            }else{
-               try{
-               window.location.href = 'taobao://better.tmall.hk';
-               }catch(e){
-                  alert(e.name);
-               }
-                 window.setTimeout(function () {
-                        window.location.href = 'http://better.m.tmall.com' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了
-                }, 500);
-            }
-
-              
-            }
-            openApp();
-</script>
+	<script type="text/javascript">
+	/**  
+	浏览器版本信息
+	* @type {Object} 
+	* @return {Boolean}  返回布尔值     
+	*/
+	function browser() {
+	    var u = navigator.userAgent.toLowerCase();
+	    var app = navigator.appVersion.toLowerCase();
+	    return {
+	        txt: u, // 浏览器版本信息
+	        version: (u.match(/.+(?:rv|it|ra|ie)[\/: ]([\d.]+)/) || [])[1], // 版本号       
+	        msie: /msie/.test(u) && !/opera/.test(u), // IE内核
+	        mozilla: /mozilla/.test(u) && !/(compatible|webkit)/.test(u), // 火狐浏览器
+	        safari: /safari/.test(u) && !/chrome/.test(u), //是否为safair
+	        chrome: /chrome/.test(u), //是否为chrome
+	        opera: /opera/.test(u), //是否为oprea
+	        presto: u.indexOf('presto/') > -1, //opera内核
+	        webKit: u.indexOf('applewebkit/') > -1, //苹果、谷歌内核
+	        gecko: u.indexOf('gecko/') > -1 && u.indexOf('khtml') == -1, //火狐内核
+	        mobile: !!u.match(/applewebkit.*mobile.*/), //是否为移动终端
+	        ios: !!u.match(/\(i[^;]+;( u;)? cpu.+mac os x/), //ios终端
+	        android: u.indexOf('android') > -1, //android终端
+	        iPhone: u.indexOf('iphone') > -1, //是否为iPhone
+	        iPad: u.indexOf('ipad') > -1, //是否iPad,
+			weixin:/MicroMessenger/i.test(u),
+	        webApp: !!u.match(/applewebkit.*mobile.*/) && u.indexOf('safari/') == -1 //是否web应该程序，没有头部与底部
+	    };
+	}
+	var timeout;
+	function openUrl() {
+		var b=browser();
+		if(b.ios||b.iPhone||b.iPad||b.android){
+			window.location="http://better.m.tmall.com";
+		}
+	} 
+	function try_to_open_app() {
+		var b=browser();
+			if(!b.weixin){
+			document.write('<iframe id="yige-org-iframe" src="taobao://" style="display:none"></iframe>');
+			}else if(){
+				window.location="taobao://";
+				timeout = setTimeout('openUrl()', 30);
+			}
+		
+	}
+	try_to_open_app();
+	</script>
 </head>
 <body>
 <div><img src="http://beijia.seleet.com/images/better.jpg" style="width:100%;height:100%"></div>
 </body>
 </html>
+
+
